@@ -199,7 +199,7 @@ CREATE TABLE public.star (
     star_id integer NOT NULL,
     name character varying(30) NOT NULL,
     galaxy_id integer NOT NULL,
-    solar_mass numeric(3,3),
+    solar_mass numeric(6,3),
     temperature_in_k integer
 );
 
@@ -267,65 +267,124 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.galaxy VALUES (1, 'Milky Way', 87400, 'Barred spiral galaxy', false);
+INSERT INTO public.galaxy VALUES (2, 'Andromeda Galaxy', 152000, 'SA(s)b', false);
+INSERT INTO public.galaxy VALUES (3, 'Large Magellanic Cloud', 32200, 'SB(s)m', false);
+INSERT INTO public.galaxy VALUES (4, 'Messier 82', 37000, ' I0;Sbrst HII', false);
+INSERT INTO public.galaxy VALUES (5, 'Spore Galaxy', 4240, 'Unbarred spiral galaxy', true);
+INSERT INTO public.galaxy VALUES (6, 'The Galaxy', 120000, 'Barred spiral galaxy', true);
 
 
 --
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, 'Moon', 3, true, 384784);
+INSERT INTO public.moon VALUES (2, 'Phobos', 4, true, 9376);
+INSERT INTO public.moon VALUES (3, 'Deimos', 4, true, 23463);
+INSERT INTO public.moon VALUES (4, 'Ganymede', 5, true, 1070400);
+INSERT INTO public.moon VALUES (5, 'Callisto', 5, true, 1882700);
+INSERT INTO public.moon VALUES (6, 'Io', 5, true, 421700);
+INSERT INTO public.moon VALUES (7, 'Europa', 5, true, 670900);
+INSERT INTO public.moon VALUES (8, 'Titan', 6, true, 1221870);
+INSERT INTO public.moon VALUES (9, 'Rhea', 6, true, 527040);
+INSERT INTO public.moon VALUES (10, 'Iapetus', 6, true, 3560820);
+INSERT INTO public.moon VALUES (11, 'Dione', 6, true, 377396);
+INSERT INTO public.moon VALUES (12, 'Tethys', 6, true, 294619);
+INSERT INTO public.moon VALUES (13, 'Enceladus', 6, true, 238037);
+INSERT INTO public.moon VALUES (14, 'Mimas', 6, true, 185539);
+INSERT INTO public.moon VALUES (15, 'Hyperion', 6, false, 1481500);
+INSERT INTO public.moon VALUES (16, 'Phoebe', 6, false, 12929400);
+INSERT INTO public.moon VALUES (17, 'Titania', 7, true, 435910);
+INSERT INTO public.moon VALUES (18, 'Oberon', 7, true, 583520);
+INSERT INTO public.moon VALUES (19, 'Umbriel', 7, true, 266000);
+INSERT INTO public.moon VALUES (20, 'Ariel', 7, true, 190900);
+INSERT INTO public.moon VALUES (21, 'Miranda', 7, true, 129390);
+INSERT INTO public.moon VALUES (22, 'Triton', 8, true, 354759);
+INSERT INTO public.moon VALUES (23, 'Proteus', 8, true, 117647);
+INSERT INTO public.moon VALUES (24, 'Nereid', 8, false, 5504000);
+INSERT INTO public.moon VALUES (25, 'Charon', 9, true, 19595);
+INSERT INTO public.moon VALUES (26, 'Nix', 9, false, 48694);
+INSERT INTO public.moon VALUES (27, 'Hydra', 9, false, 64738);
+INSERT INTO public.moon VALUES (28, 'Kerberos', 9, false, 57783);
+INSERT INTO public.moon VALUES (29, 'Styx', 9, false, 42656);
+INSERT INTO public.moon VALUES (30, 'Ghomrassen', 12, NULL, NULL);
+INSERT INTO public.moon VALUES (31, 'Guermessa', 12, NULL, NULL);
+INSERT INTO public.moon VALUES (32, 'Chenini', 12, NULL, 6437376);
 
 
 --
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet VALUES (1, 'Mercury', 1, false, 'Rocky planet');
+INSERT INTO public.planet VALUES (2, 'Venus', 1, false, 'Rocky planet');
+INSERT INTO public.planet VALUES (3, 'Earth', 1, true, 'Rocky planet');
+INSERT INTO public.planet VALUES (4, 'Mars', 1, false, 'Rocky planet');
+INSERT INTO public.planet VALUES (5, 'Jupiter', 1, false, 'Gas giant');
+INSERT INTO public.planet VALUES (6, 'Saturn', 1, false, 'Gas giant');
+INSERT INTO public.planet VALUES (7, 'Uranus', 1, false, 'Gas giant');
+INSERT INTO public.planet VALUES (8, 'Neptune', 1, false, 'Gas giant');
+INSERT INTO public.planet VALUES (9, 'Pluto', 1, false, 'Dwarf planet');
+INSERT INTO public.planet VALUES (10, 'Grox''s Planet', 4, true, 'Rocky planet');
+INSERT INTO public.planet VALUES (11, 'Alderaan', 5, true, 'Rocky planet');
+INSERT INTO public.planet VALUES (12, 'Tatooine', 6, true, 'Rocky planet');
 
 
 --
 -- Data for Name: species; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.species VALUES (1, 3, 'Human', false, 0.70);
+INSERT INTO public.species VALUES (2, 10, 'Grox', true, 2.00);
+INSERT INTO public.species VALUES (3, 12, 'Tusken Raider', true, 0.00);
 
 
 --
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.star VALUES (1, 'Sun', 1, 1.000, 5772);
+INSERT INTO public.star VALUES (2, 'Polaris Aa', 1, 5.130, 6015);
+INSERT INTO public.star VALUES (3, 'Ross 248', 2, 0.145, 2930);
+INSERT INTO public.star VALUES (4, 'Grox''s Sun', 5, NULL, NULL);
+INSERT INTO public.star VALUES (5, 'Alderaan''s Sun', 6, NULL, NULL);
+INSERT INTO public.star VALUES (6, 'Tatoo I', 6, NULL, NULL);
 
 
 --
 -- Name: galaxy_galaxy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 1, false);
+SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 
 
 --
 -- Name: moon_mooon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.moon_mooon_id_seq', 1, false);
+SELECT pg_catalog.setval('public.moon_mooon_id_seq', 32, true);
 
 
 --
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, false);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 12, true);
 
 
 --
 -- Name: species_species_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.species_species_id_seq', 1, false);
+SELECT pg_catalog.setval('public.species_species_id_seq', 3, true);
 
 
 --
 -- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.star_star_id_seq', 1, false);
+SELECT pg_catalog.setval('public.star_star_id_seq', 6, true);
 
 
 --
